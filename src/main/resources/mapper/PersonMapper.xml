@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD com.example.Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdn.springbootmybatisdemo.dao.PersonMapper">
+    <resultMap id="result" type="com.csdn.springbootmybatisdemo.domain.Person">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+    </resultMap>
+    <select id="find" resultMap="result">
+        SELECT * FROM person where username=#{username}
+    </select>
+    <select id="list" resultMap="result">
+        SELECT * FROM person
+    </select>
+    <insert id="insert" parameterType="com.csdn.springbootmybatisdemo.domain.Person"
+            keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO person
+        (
+        id,username,password
+        )
+        VALUES (
+        #{id},
+        #{username, jdbcType=VARCHAR},
+        #{password, jdbcType=VARCHAR}
+        )
+    </insert>
+    <delete id="delete" parameterType="int">
+        delete from person where id=#{id}
+    </delete>
+    <update id="update" parameterType="com.csdn.springbootmybatisdemo.domain.Person">
+        update person set username=#{username},password=#{password} where id=#{id}
+    </update>
+</mapper>
