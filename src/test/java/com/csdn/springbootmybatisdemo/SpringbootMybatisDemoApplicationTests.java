@@ -7,7 +7,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 class SpringbootMybatisDemoApplicationTests {
 
     @Test
-    void contextLoads() {
+    void contextLoads() 
+    {
+        //代码改变在服务器
+        int i=0;
+        String b="nhilad  wo我的界";
     }
 
 }
