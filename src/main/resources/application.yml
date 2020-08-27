@@ -1,4 +1,4 @@
-#Êı¾İÔ´
+#æ•°æ®æº
 spring:
   datasource:
     url: jdbc:mysql://192.168.1.11:3306/docker_db_ssm?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
